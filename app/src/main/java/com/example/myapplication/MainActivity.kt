@@ -63,12 +63,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setBottomBtnState(currentPosition: Int) {
-
-        if (currentPosition == indicators.size - 1)
-            fragmentOnBoardingBinding.btn.text = "Let's Go"
-        else
-            fragmentOnBoardingBinding.btn.text = "Continue"
-
+        fragmentOnBoardingBinding.btn.visibility =
+            if (currentPosition == indicators.size - 1) View.VISIBLE else View.INVISIBLE
     }
 
     private fun setCurrentIndicator(currentPosition: Int) {

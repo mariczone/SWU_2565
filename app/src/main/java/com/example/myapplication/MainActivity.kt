@@ -7,18 +7,40 @@ import android.view.View
 import android.view.ViewTreeObserver
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.myapplication.adapter.OnBoardingAdapter
+import com.example.myapplication.adapter.OnBoardingViewItem
+import com.example.myapplication.databinding.FragmentOnBoardingBinding
 
 class MainActivity : AppCompatActivity() {
     private val TAG = MainActivity::class.java.simpleName
     private var isSplashFinished = true
 
+    //    private val fragmentOnBoardingBinding by lazy {
+//        FragmentOnBoardingBinding.inflate(layoutInflater)
+//    }
+    private lateinit var fragmentOnBoardingBinding: FragmentOnBoardingBinding
 
-    @RequiresApi(Build.VERSION_CODES.S)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_on_boarding_second)
-        setupSplashScreenState()
+        fragmentOnBoardingBinding = FragmentOnBoardingBinding.inflate(layoutInflater)
+        setContentView(fragmentOnBoardingBinding.root)
+        fragmentOnBoardingBinding.viewPager.apply {
+            adapter = OnBoardingAdapter(
+                listOf(
+                    OnBoardingViewItem(
+                        title = "Find your \nComfort Food here",
+                        description = "Here You Can find a chef or dish for every taste and color. Enjoy!",
+                        imageId = R.drawable.on_boarding_first_bg
+                    ),
+                    OnBoardingViewItem(
+                        title = "Food Ninja is Where \nYour Comfort Food Lives",
+                        description = "Enjoy a fast and smooth food delivery at your doorstep",
+                        imageId = R.drawable.on_boarding_first_bg
+                    )
+                )
+            )
+        }
+//        setupSplashScreenState()
         //SetUp splash screen for android 12
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             setupAboveAndroid12SplashScreen()

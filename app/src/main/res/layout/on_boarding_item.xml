@@ -8,6 +8,7 @@
     tools:context=".OnBoardingFirstFragment">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.55"
@@ -20,6 +21,7 @@
         android:layout_weight="0.05" />
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bento_sans_bold"
@@ -35,6 +37,7 @@
         android:layout_weight="0.04" />
 
     <TextView
+        android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/benton_sans_book"

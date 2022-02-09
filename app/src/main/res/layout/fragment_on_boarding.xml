@@ -13,9 +13,11 @@
         android:layout_weight="0.1" />
 
     <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.8" />
+        android:layout_weight="0.8"
+        android:orientation="horizontal" />
 
     <Space
         android:layout_width="match_parent"

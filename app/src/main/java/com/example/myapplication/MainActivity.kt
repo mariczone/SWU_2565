@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.S)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_on_boarding)
+        setContentView(R.layout.fragment_on_boarding_second)
         setupSplashScreenState()
         //SetUp splash screen for android 12
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {

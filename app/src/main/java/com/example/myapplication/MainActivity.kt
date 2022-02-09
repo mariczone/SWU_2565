@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.ViewTreeObserver
+import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.adapter.OnBoardingAdapter
 import com.example.myapplication.adapter.OnBoardingViewItem
 import com.example.myapplication.databinding.FragmentOnBoardingBinding
@@ -19,10 +21,16 @@ class MainActivity : AppCompatActivity() {
 //        FragmentOnBoardingBinding.inflate(layoutInflater)
 //    }
     private lateinit var fragmentOnBoardingBinding: FragmentOnBoardingBinding
+    private lateinit var indicators: List<ImageView>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         fragmentOnBoardingBinding = FragmentOnBoardingBinding.inflate(layoutInflater)
+        indicators = listOf(
+            fragmentOnBoardingBinding.indicator1,
+            fragmentOnBoardingBinding.indicator2,
+            fragmentOnBoardingBinding.indicator3
+        )
         setContentView(fragmentOnBoardingBinding.root)
         fragmentOnBoardingBinding.viewPager.apply {
             adapter = OnBoardingAdapter(
@@ -35,15 +43,41 @@ class MainActivity : AppCompatActivity() {
                     OnBoardingViewItem(
                         title = "Food Ninja is Where \nYour Comfort Food Lives",
                         description = "Enjoy a fast and smooth food delivery at your doorstep",
+                        imageId = R.drawable.on_boarding_second_bg
+                    ),
+                    OnBoardingViewItem(
+                        title = "Food Ninja is Where \nYour Comfort Food Lives",
+                        description = "Enjoy a fast and smooth food delivery at your doorstep",
                         imageId = R.drawable.on_boarding_first_bg
                     )
                 )
             )
+            registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+                    setCurrentIndicator(position)
+                    setBottomBtnState(position)
+                }
+            })
         }
-//        setupSplashScreenState()
-        //SetUp splash screen for android 12
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            setupAboveAndroid12SplashScreen()
+    }
+
+    private fun setBottomBtnState(currentPosition: Int) {
+
+        if (currentPosition == indicators.size - 1)
+            fragmentOnBoardingBinding.btn.text = "Let's Go"
+        else
+            fragmentOnBoardingBinding.btn.text = "Continue"
+
+    }
+
+    private fun setCurrentIndicator(currentPosition: Int) {
+        indicators.forEachIndexed { index, iv ->
+            if (currentPosition == index) {
+                iv.setImageResource(R.drawable.indicator_active)
+            } else {
+                iv.setImageResource(R.drawable.indicator_inactive)
+            }
         }
     }
 

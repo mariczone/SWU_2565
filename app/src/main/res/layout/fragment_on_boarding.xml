@@ -24,17 +24,45 @@
         android:layout_height="0dp"
         android:layout_weight="0.05" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <LinearLayout
         android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/indicator1"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/indicator_inactive" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/indicator2"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/indicator_inactive" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/indicator3"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/indicator_inactive" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn"
         style="@style/PrimaryButton"
         android:layout_width="150dp"
         android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:text="Next" />
+        android:layout_weight="0.08"
+        android:text="Continue" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.1" />
+        android:layout_weight="0.02" />
 
 </LinearLayout>

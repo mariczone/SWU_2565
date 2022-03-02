@@ -13,4 +13,11 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="PrimaryButton">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textFontWeight">400</item>
+        <item name="android:background">@drawable/primary_button_bg</item>
+        <item name="fontFamily">@font/bento_sans_bold</item>
+    </style>
 </resources>

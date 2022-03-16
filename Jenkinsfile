@@ -10,6 +10,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Testing...'
+        sh "chmod +x gradlew"
         snykSecurity(
           snykInstallation: 'snyk@lastest',
           snykTokenId: 'admin-snyk-api-token',

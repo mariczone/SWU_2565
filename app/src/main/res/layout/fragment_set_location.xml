@@ -9,6 +9,9 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="15dp"
+        android:outlineSpotShadowColor="#5A6CEA"
         android:layout_gravity="top">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -44,10 +47,13 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="#F6F6F6"
+                android:elevation="16dp"
+                android:shadowColor="#5A6CEA"
                 android:fontFamily="@font/benton_sans_medium"
                 android:text="Set Location"
                 android:textColor="#09051C"
                 android:textFontWeight="400"
+                android:textAllCaps="false"
                 android:textSize="15sp"
                 app:cornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"

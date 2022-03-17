@@ -30,5 +30,6 @@ class UploadPhotoFragment : Fragment() {
         templateUploadPhotoBinding.backBtn.setOnClickListener {
             findNavController().popBackStack()
         }
+        templateUploadPhotoBinding.nextBtn.visibility = View.INVISIBLE
     }
 }

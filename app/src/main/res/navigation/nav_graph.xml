@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashScreenFragment">
+    app:startDestination="@id/uploadPhotoFragment">
 
     <fragment
         android:id="@+id/splashScreenFragment"
@@ -48,5 +48,18 @@
         android:id="@+id/uploadPhotoFragment"
         android:name="com.example.myapplication.UploadPhotoFragment"
         android:label="fragment_upload_photo"
-        tools:layout="@layout/template_upload_photo" />
+        tools:layout="@layout/template_upload_photo">
+        <action
+            android:id="@+id/action_uploadPhotoFragment_to_uploadPhotoPreviewFragment"
+            app:destination="@id/uploadPhotoPreviewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/uploadPhotoPreviewFragment"
+        android:name="com.example.myapplication.UploadPhotoPreviewFragment"
+        android:label="fragment_upload_photo_preview"
+        tools:layout="@layout/fragment_upload_photo_preview" />
 </navigation>

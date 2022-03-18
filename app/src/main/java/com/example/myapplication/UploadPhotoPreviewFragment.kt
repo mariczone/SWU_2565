@@ -19,7 +19,8 @@ class UploadPhotoPreviewFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         templateUploadPhotoBinding = TemplateUploadPhotoBinding.inflate(layoutInflater)
-        fragmentUploadPhotoPreviewBinding = FragmentUploadPhotoPreviewBinding.inflate(layoutInflater)
+        fragmentUploadPhotoPreviewBinding =
+            FragmentUploadPhotoPreviewBinding.inflate(layoutInflater)
         return templateUploadPhotoBinding.root
     }
 
@@ -30,6 +31,9 @@ class UploadPhotoPreviewFragment : Fragment() {
         }
         templateUploadPhotoBinding.backBtn.setOnClickListener {
             findNavController().popBackStack()
+        }
+        templateUploadPhotoBinding.nextBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_uploadPhotoPreviewFragment_to_setLocationFragment)
         }
     }
 }

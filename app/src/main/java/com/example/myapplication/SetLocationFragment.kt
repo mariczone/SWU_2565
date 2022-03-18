@@ -19,6 +19,7 @@ import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
+import com.google.android.material.snackbar.Snackbar
 
 private val TAG = SetLocationFragment::class.java.simpleName
 
@@ -50,7 +51,7 @@ class SetLocationFragment : Fragment() {
         }
     }
 
-    val requestPermissionLauncher =
+    private val requestPermissionLauncher =
         registerForActivityResult(
             ActivityResultContracts.RequestPermission()
         ) { isGranted: Boolean ->
@@ -58,7 +59,7 @@ class SetLocationFragment : Fragment() {
                 setupLocationProvider()
                 Toast.makeText(requireContext(), "Granted", Toast.LENGTH_LONG).show()
             } else {
-                Toast.makeText(requireContext(), "Deny", Toast.LENGTH_LONG).show()
+                Snackbar.make(requireView(), "App permission denied", Snackbar.LENGTH_LONG).show()
             }
         }
 
@@ -75,7 +76,7 @@ class SetLocationFragment : Fragment() {
                 val fusedLocationProviderClient =
                     LocationServices.getFusedLocationProviderClient(requireContext())
                 val locationRequest =
-                    LocationRequest().setInterval(6000L).setFastestInterval(1000L).setPriority(
+                    LocationRequest().setInterval(6000L).setPriority(
                         LocationRequest.PRIORITY_HIGH_ACCURACY
                     )
                 fusedLocationProviderClient.requestLocationUpdates(

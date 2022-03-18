@@ -42,6 +42,7 @@
                 app:layout_constraintTop_toTopOf="@+id/image" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/setLocationBtn"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_marginHorizontal="10dp"

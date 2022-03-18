@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,5 +36,11 @@ class UploadPhotoPreviewFragment : Fragment() {
         templateUploadPhotoBinding.nextBtn.setOnClickListener {
             findNavController().navigate(R.id.action_uploadPhotoPreviewFragment_to_setLocationFragment)
         }
+        fragmentUploadPhotoPreviewBinding.previewImage.setImageBitmap(bitmap)
     }
+
+    companion object {
+        var bitmap: Bitmap? = null
+    }
+
 }

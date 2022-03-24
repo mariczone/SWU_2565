@@ -21,6 +21,21 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        replaceFragment(HomeFragment())
+        fragmentMainBinding.bottomNavigation.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.item_home -> replaceFragment(HomeFragment())
+                R.id.item_profile -> replaceFragment(ProfileFragment())
+                R.id.item_cart -> replaceFragment(CartFragment())
+                R.id.item_chat -> replaceFragment(ChatFragment())
+            }
+            return@setOnItemSelectedListener true
+        }
+    }
 
+    private fun replaceFragment(toBeReplaceFragment: Fragment) {
+        requireActivity().supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, toBeReplaceFragment)
+            .commit()
     }
 }

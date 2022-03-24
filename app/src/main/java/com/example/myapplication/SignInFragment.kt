@@ -22,7 +22,7 @@ class SignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         fragmentSignInBinding.signInBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_signInFragment_to_uploadPhotoFragment)
+            findNavController().navigate(R.id.action_signInFragment_to_mainFragment)
         }
     }
 }

@@ -177,7 +177,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/benton_sans_medium"
-            android:text="Forgot Your Password?"
+            android:text="SignUp"
             android:textColor="#53E88B"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"

@@ -47,7 +47,7 @@
             app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/appCompatTextView3"
+            android:id="@+id/tvFormTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
@@ -74,7 +74,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3">
+            app:layout_constraintTop_toBottomOf="@+id/tvFormTitle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email"
@@ -104,6 +104,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
+                android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password" />
@@ -172,7 +173,7 @@
             app:strokeWidth="2.5dp" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/appCompatTextView5"
+            android:id="@+id/tvSwitchMode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -199,7 +200,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView5" />
+            app:layout_constraintTop_toBottomOf="@+id/tvSwitchMode" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -19,7 +19,6 @@ class SignInFragment : Fragment() {
     private lateinit var executor: Executor
     private lateinit var biometricPrompt: BiometricPrompt
     private lateinit var promptInfo: BiometricPrompt.PromptInfo
-    var isLoginForm: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -91,19 +90,6 @@ class SignInFragment : Fragment() {
                     Toast.makeText(requireContext(), "Wrong password or email", Toast.LENGTH_SHORT)
                         .show()
                 }
-            }
-        }
-
-        fragmentSignInBinding.appCompatTextView5.setOnClickListener {
-            isLoginForm = !isLoginForm
-            if (isLoginForm) {
-                fragmentSignInBinding.appCompatTextView5.text = "SignUp"
-                fragmentSignInBinding.signInBtn.text = "Login"
-                fragmentSignInBinding.appCompatTextView3.text = "Login To Your Account"
-            } else {
-                fragmentSignInBinding.appCompatTextView5.text = "SignIn"
-                fragmentSignInBinding.signInBtn.text = "Register"
-                fragmentSignInBinding.appCompatTextView3.text = "Create Account"
             }
         }
     }

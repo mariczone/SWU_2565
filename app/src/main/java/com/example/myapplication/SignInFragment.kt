@@ -110,7 +110,10 @@ class SignInFragment : Fragment() {
     }
 
     private fun register(email: String, password: String) {
+        var dialog = getLoading()
+        dialog.show()
         mAuth!!.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+            dialog.dismiss()
             if (task.isSuccessful) {
                 // Case Success
                 mAuth.currentUser?.sendEmailVerification()?.addOnCompleteListener{

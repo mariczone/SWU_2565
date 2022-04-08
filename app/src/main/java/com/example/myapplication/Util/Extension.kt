@@ -9,5 +9,7 @@ fun Fragment.getLoading(): Dialog {
     val builder = AlertDialog.Builder((activity as MainActivity))
     builder.setView(R.layout.progress)
     builder.setCancelable(false)
-    return builder.create()
+    var dialog = builder.create()
+    dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+    return dialog
 }

@@ -25,7 +25,7 @@ class MainFragment : Fragment() {
         fragmentMainBinding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.item_home -> replaceFragment(HomeFragment())
-                R.id.item_profile -> replaceFragment(ProfileFragment())
+                R.id.item_profile -> replaceFragment(MapFragment())
                 R.id.item_cart -> replaceFragment(CartFragment())
                 R.id.item_chat -> replaceFragment(ChatFragment())
             }
@@ -35,7 +35,7 @@ class MainFragment : Fragment() {
 
     private fun replaceFragment(toBeReplaceFragment: Fragment) {
         requireActivity().supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, toBeReplaceFragment)
+            .replace(R.id.fragment_cv, toBeReplaceFragment)
             .commit()
     }
 }
